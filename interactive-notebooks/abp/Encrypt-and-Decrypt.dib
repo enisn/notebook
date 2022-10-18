@@ -1,0 +1,31 @@
+#!markdown
+
+## Install dependencies
+Following section will install dependencies.
+
+#!csharp
+
+#r "nuget: Volo.Abp.Security, 6.0.0"
+
+#!csharp
+
+using Microsoft.Extensions.Options;
+using Volo.Abp.Security.Encryption;
+var encryptionService = new StringEncryptionService(Options.Create(new AbpStringEncryptionOptions()));
+
+#!csharp
+
+var plainText = "Mysampletext,bb4cc106-5b04-4094-a706-fc5b120687ta";
+var passPhrase = "MyTestSample";
+var salt = "eadd67b51c72400eb3106167917ad6fc";
+
+Console.WriteLine("Plain value: " + plainText);
+
+var encryptedValue = encryptionService.Encrypt(plainText, passPhrase, salt: Encoding.UTF8.GetBytes(salt));
+
+Console.WriteLine("Encrypted: " + encryptedValue);
+
+#!csharp
+
+var decryptedValue = encryptionService.Decrypt(encryptedValue, passPhrase, salt: Encoding.UTF8.GetBytes(salt));
+Console.WriteLine("Decrypted: " + decryptedValue);
