@@ -1,0 +1,39 @@
+#!markdown
+
+# Install Dependencies
+Run following cell to install dependencies and prepare the environment.
+
+#!csharp
+
+#r "nuget: Volo.CmsKit.Domain, 6.0.0"
+
+using Volo.CmsKit;
+
+#!markdown
+
+# Playground
+You can use following code cells to play with the code.
+
+#!csharp
+
+Console.WriteLine(
+    SlugNormalizer.Normalize("My awesome name")
+);
+
+#!csharp
+
+Console.WriteLine(
+    SlugNormalizer.Normalize("Мое классное название")
+);
+
+#!csharp
+
+Console.WriteLine(
+    SlugNormalizer.Normalize("Özel Türkçe karakterler: ğüşiöç")
+);
+
+#!csharp
+
+Console.WriteLine(
+    SlugNormalizer.Normalize("我的真棒头衔")
+);
