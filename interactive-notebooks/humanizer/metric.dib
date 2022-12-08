@@ -6,15 +6,19 @@
 
 #r "nuget: Humanizer.Core"
 
-#!csharp
-
 using Humanizer;
 
 #!csharp
 
-var millionAndHalf = 1_500_000;
+var hundredAndHalf = 150;
 
-Console.WriteLine(millionAndHalf.ToMetric());
+Console.WriteLine(hundredAndHalf.ToMetric());
+
+#!csharp
+
+var millionAndHalf = 1564423;
+
+Console.WriteLine(millionAndHalf.);
 
 #!csharp
 
