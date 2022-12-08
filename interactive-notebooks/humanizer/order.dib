@@ -1,0 +1,26 @@
+#!markdown
+
+# Humanizer Metric playground
+
+#!csharp
+
+#r "nuget: Humanizer"
+
+using Humanizer;
+
+#!csharp
+
+1.Ordinalize() + "\n" +
+2.Ordinalize() + "\n" +
+3.Ordinalize()
+
+#!csharp
+
+using System.Globalization;
+
+CultureInfo.CurrentCulture = new CultureInfo("tr-TR");
+CultureInfo.CurrentUICulture = new CultureInfo("tr-TR");
+
+1.Ordinalize() + "\n" +
+2.Ordinalize() + "\n" +
+3.Ordinalize()
