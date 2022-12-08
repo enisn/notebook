@@ -1,0 +1,29 @@
+#!markdown
+
+# Humanizer Metric playground
+
+#!csharp
+
+#r "nuget: Humanizer.Core"
+
+#!csharp
+
+using Humanizer;
+
+#!csharp
+
+var millionAndHalf = 1_500_000;
+
+Console.WriteLine(millionAndHalf.ToMetric());
+
+#!csharp
+
+var tousandAndQuarter = 1_250;
+
+Console.WriteLine(tousandAndQuarter.ToMetric());
+
+#!csharp
+
+var billionAndHalf = 1_500_000_000;
+
+Console.WriteLine(billionAndHalf.ToMetric());
