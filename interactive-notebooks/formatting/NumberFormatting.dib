@@ -1,0 +1,52 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":null,"items":[{"name":"csharp","languageName":"C#","aliases":["c#","cs"]},{"name":"fsharp","languageName":"F#","aliases":["f#","fs"]},{"name":"pwsh","languageName":"PowerShell","aliases":["powershell"]},{"name":"javascript","languageName":"JavaScript","aliases":["js"]},{"name":"html","languageName":"HTML"},{"name":"sql","languageName":"SQL"},{"name":"kql","languageName":"KQL"},{"name":"mermaid","languageName":"Mermaid"},{"name":"httpRequest","languageName":"http"},{"name":"value"}]}}
+
+#!markdown
+
+Original Gist:
+[NumberFormatter.cs](https://gist.github.com/FiercestT/8201fc1a57ea28d5b09f8cd5892d12ab)
+
+- NumberFormat(1587) -> 1.59K
+- NumberFormat(3_798_576) -> 3.8M
+
+#!csharp
+
+public enum suffixes
+{
+    p, // p is a placeholder if the value is under 1 thousand
+    K, // Thousand
+    M, // Million
+    B, // Billion
+    T, // Trillion
+    Q, //Quadrillion
+}
+
+//Formats numbers in Millions, Billions, etc.
+public static string NumberFormat(long money)
+{
+    int decimals = 2; //How many decimals to round to
+    string r = money.ToString(); //Get a default return value
+
+    foreach (suffixes suffix in Enum.GetValues(typeof(suffixes))) //For each value in the suffixes enum
+    {
+        var currentVal = 1 * Math.Pow(10, (int)suffix * 3); //Assign the amount of digits to the base 10
+        var suff = Enum.GetName(typeof(suffixes), (int)suffix); //Get the suffix value
+        if ((int)suffix == 0) //If the suffix is the p placeholder
+            suff = String.Empty; //set it to an empty string
+
+        if (money >= currentVal)
+            r = Math.Round((money / currentVal), decimals, MidpointRounding.ToEven).ToString() + suff; //Set the return value to a rounded value with suffix
+        else
+            return r; //If the value wont go anymore then return
+    }
+    return r; // Default Return
+}
+
+#!csharp
+
+NumberFormat(1587)
+
+#!csharp
+
+NumberFormat(3_798_576)
