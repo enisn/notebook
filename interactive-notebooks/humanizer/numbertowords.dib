@@ -1,0 +1,18 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+# Numbers to Words
+
+#!csharp
+
+#r "nuget: Humanizer"
+
+using Humanizer;
+using System.Globalization;
+
+#!csharp
+
+Console.WriteLine(123456789.ToWords(new CultureInfo("tr-TR")));

@@ -1,0 +1,35 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!csharp
+
+using System.Xml.Linq;
+
+#!csharp
+
+var doc = System.Xml.Linq.XDocument.Parse($"""<ContentPage xmlns:x="r" xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material">  <material:AutoCompleteTextField Text="Hello"> <material:AutoCompleteTextField.ItemsSource> <x:String>Option 1</x:String> </material:AutoCompleteTextField.ItemsSource> </material:AutoCompleteTextField></ContentPage>""");
+
+#!csharp
+
+var doc = System.Xml.Linq.XDocument.Parse($"""<ContentPage xmlns:x="r" xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material">  <material:AutoCompleteTextField Text="Hello"> </material:AutoCompleteTextField></ContentPage>""");
+
+#!csharp
+
+doc.ToString()
+
+#!csharp
+
+var contentPage = doc.Descendants().First();
+var material = doc.Root.GetNamespaceOfPrefix("material");
+
+var x = doc.Root.GetNamespaceOfPrefix("x");
+
+#!csharp
+
+var control = contentPage.Descendants().First();
+control.Add(new XElement(material + "AutoCompleteTextField.ItemsSource", new XElement(x + "String", "Option 1")));
+
+#!csharp
+
+doc.ToString()

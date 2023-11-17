@@ -1,0 +1,13 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!csharp
+
+using System;
+
+#!csharp
+
+var message = DateTime.Now.TimeOfDay.Ticks.ToString();
+
+Console.WriteLine(message);

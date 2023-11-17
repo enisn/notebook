@@ -1,0 +1,11 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!csharp
+
+int number = 57600;
+
+#!csharp
+
+number.ToString("X")

@@ -1,0 +1,20 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!csharp
+
+var old = new[] { "a", "b"};
+var @new = new[] { "b", "c"};
+
+#!csharp
+
+var added = @new.Where(x => !old.Any(a => a == x)).ToArray();
+
+added
+
+#!csharp
+
+var removed = old.Where(x => !@new.Any(a => a == x)).ToArray();
+
+removed

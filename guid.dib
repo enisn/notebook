@@ -1,0 +1,9 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!csharp
+
+var parsed = Guid.Parse("49f05b7a-8a7f-4693-a59b-5717fa134746");
+
+parsed
