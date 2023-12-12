@@ -1,0 +1,19 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!csharp
+
+using System.IO;
+
+#!csharp
+
+var win32Folder = Path.Combine("C:\\", "Windows", "System32");
+
+win32Folder
+
+#!csharp
+
+var oneFolderUp = Path.GetFullPath(Path.Combine(win32Folder, ".."));
+
+oneFolderUp
