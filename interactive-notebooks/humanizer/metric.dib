@@ -22,7 +22,7 @@ Console.WriteLine(hundredAndHalf.ToMetric());
 
 var millionAndHalf = 1564423;
 
-Console.WriteLine(millionAndHalf.);
+Console.WriteLine(millionAndHalf.ToMetric(MetricNumeralFormats.UseLongScaleWord));
 
 #!csharp
 
