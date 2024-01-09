@@ -16,7 +16,7 @@ using Humanizer;
 
 var hundredAndHalf = 150;
 
-Console.WriteLine(hundredAndHalf.ToMetric());
+Console.WriteLine(hundredAndHalf.ToMetric(MetricNumeralFormats.UseLongScaleWord));
 
 #!csharp
 
@@ -28,10 +28,10 @@ Console.WriteLine(millionAndHalf.ToMetric(MetricNumeralFormats.UseLongScaleWord)
 
 var tousandAndQuarter = 1_250;
 
-Console.WriteLine(tousandAndQuarter.ToMetric());
+Console.WriteLine(tousandAndQuarter.ToMetric(MetricNumeralFormats.UseLongScaleWord));
 
 #!csharp
 
 var billionAndHalf = 1_500_000_000;
 
-Console.WriteLine(billionAndHalf.ToMetric());
+Console.WriteLine(billionAndHalf.ToMetric(MetricNumeralFormats.UseLongScaleWord));
