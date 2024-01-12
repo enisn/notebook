@@ -1,0 +1,21 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!csharp
+
+using System.IO;
+
+#!csharp
+
+var somePath = @"C:\Users\Public\Documents\myText.txt";
+
+somePath
+
+#!csharp
+
+Path.GetDirectoryName(somePath)
+
+#!csharp
+
+Path.GetFileNameWithoutExtension(somePath)
