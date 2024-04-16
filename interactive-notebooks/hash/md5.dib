@@ -1,0 +1,39 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+# Calculate MD5 from string
+This example shows how to calculate MD5 from a string.
+
+#!csharp
+
+string GetMd5(string input)
+{
+    using (var md5 = System.Security.Cryptography.MD5.Create())
+    {
+        var inputBytes = Encoding.ASCII.GetBytes(input);
+        var hashBytes = md5.ComputeHash(inputBytes);
+
+        var sb = new StringBuilder();
+        for (int i = 0; i < hashBytes.Length; i++)
+        {
+            sb.Append(hashBytes[i].ToString("X2"));
+        }
+
+        return sb.ToString();
+    }
+}
+
+#!markdown
+
+Now use the method above to solve the problem.
+
+#!csharp
+
+var input = "C:\\My\\Path\\To\\File.txt";
+
+var md5 = GetMd5(input);
+
+Console.WriteLine(md5);
