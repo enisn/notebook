@@ -1,0 +1,19 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!csharp
+
+0 % 2
+
+#!csharp
+
+1 % 2
+
+#!csharp
+
+2 % 2
+
+#!csharp
+
+3 % 2
