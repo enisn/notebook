@@ -1,0 +1,49 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!csharp
+
+[Flags]
+enum LightState
+{
+    Off = 0,
+    LeftOn = 1 << 1,
+    RightOn = 1 << 2,
+    BothOn = LeftOn | RightOn
+}
+
+#!csharp
+
+var state = LightState.Off;
+WriteFullState();
+
+void WriteFullState()
+{
+    var isLeftOn = state.HasFlag(LightState.LeftOn);
+    var isRightOn = state.HasFlag(LightState.RightOn);
+
+    Console.WriteLine("Left light is on: " + isLeftOn);
+    Console.WriteLine("Right light is on: " + isRightOn);
+}
+
+#!csharp
+
+// Turning on the left light
+state |= LightState.LeftOn;
+
+WriteFullState();
+
+#!csharp
+
+// Turning on the right light
+state |= LightState.RightOn;
+
+WriteFullState();
+
+#!csharp
+
+// Turning off the left light
+state = state ^ LightState.LeftOn;
+
+WriteFullState();
